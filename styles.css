@@ -1,0 +1,30 @@
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.boite {
+    width: 50%;
+    margin: auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+  
+table td {
+    padding: 8px;
+    border-bottom: 1px black solid;
+}
+  
+table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1.5px black solid;
+    text-align: left;
+}
+
+.champ {
+    padding: 10px;
+}
