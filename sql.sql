@@ -1,15 +1,25 @@
 DROP DATABASE IF EXISTS Boutique;
-CREATE DATABASE Boutique;
-USE Boutique;
+CREATE DATABASE Veille;
+USE Veille;
 
-CREATE TABLE categorie(
+CREATE TABLE sources(
         id INT AUTO_INCREMENT PRIMARY KEY,
-        nomCategorie VARCHAR(30) NOT NULL
+        nomSource VARCHAR(30) UNIQUE NOT NULL
 );
-CREATE TABLE produit(
+
+CREATE TABLE languages(
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        nomLanguage VARCHAR(30) UNIQUE NOT NULL
+);
+
+CREATE TABLE resultats(
         id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-        nomProduit VARCHAR(30) NOT NULL,
-        prix DOUBLE NOT NULL,
-        idCategorie INT  NOT NULL,
-        FOREIGN KEY (idCategorie) REFERENCES categorie(id)
+        date VARCHAR(30) NOT NULL,
+        idSource INT NOT NULL,
+        FOREIGN KEY (idSource) REFERENCES sources(id),
+        auteur VARCHAR(30) NOT NULL,
+        idLanguage INT NOT NULL,
+        FOREIGN KEY (idLanguage) REFERENCES languages(id),
+        evaluation INT  NOT NULL,
+        resume VARCHAR(300) NOT NULL
 );
